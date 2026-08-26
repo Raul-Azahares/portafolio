@@ -1,0 +1,4 @@
+import { projects } from "@/data/projects";
+import type { Command } from "./types";
+
+export const projectsCommand: Command = { name: "/projects", usage: "/projects", description: "Browse selected projects", execute: () => ({ content: <div><p className="mb-3 text-zinc-300">Projects found: <span className="text-amber-300">{projects.length}</span></p><div className="space-y-4">{projects.map((project, index) => <div key={project.slug}><p className="text-amber-200">[{index + 1}] {project.name}</p><p className="text-zinc-300">&nbsp;&nbsp;&nbsp;&nbsp;{project.tagline}</p><p className="text-zinc-500">&nbsp;&nbsp;&nbsp;&nbsp;{project.technologies.join(" · ")}</p></div>)}</div><p className="mt-4 text-zinc-500">Inspect one with <span className="text-amber-300">/project &lt;name&gt;</span>.</p></div> }) };

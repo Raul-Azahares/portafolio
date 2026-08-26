@@ -1,0 +1,8 @@
+export type Project = { slug: string; name: string; tagline: string; description: string; technologies: string[]; features: string[]; github?: string; demo?: string };
+
+export const projects: Project[] = [
+  { slug: "codemind", name: "CodeMind", tagline: "AI Codebase Assistant", description: "Example project: an assistant that helps engineering teams understand large codebases.", technologies: ["Go", "GraphRAG", "PostgreSQL"], features: ["Repository context maps", "Code search workflows", "Team-ready architecture"], github: "https://github.com/your-username/codemind" },
+  { slug: "deployflow", name: "DeployFlow", tagline: "Deployment Automation", description: "Example project: an automation hub for repeatable, visible deployments.", technologies: ["n8n", "Rundeck", "Slack"], features: ["Deployment runbooks", "Approval steps", "Status notifications"], github: "https://github.com/your-username/deployflow" },
+  { slug: "travelrag", name: "TravelRAG", tagline: "Travel Knowledge Assistant", description: "Example project: a focused travel information experience built around curated knowledge.", technologies: ["Python", "FastAPI", "RAG"], features: ["Source-aware answers", "Fast API layer", "Modular ingestion"], github: "https://github.com/your-username/travelrag" },
+  { slug: "signalboard", name: "SignalBoard", tagline: "Engineering Operations Dashboard", description: "Example project: a concise operational dashboard for distributed engineering teams.", technologies: ["TypeScript", "Next.js", "Tailwind CSS"], features: ["Service overview", "Incident timeline", "Responsive interface"], github: "https://github.com/your-username/signalboard", demo: "https://example.com" },
+];
