@@ -8,12 +8,12 @@ import { helpCommand } from "./help";
 import { projectCommand } from "./project";
 import { projectsCommand } from "./projects";
 import { skillsCommand } from "./skills";
-import type { Command } from "./types";
+import type { Command, CommandContext } from "./types";
 
 export const commandRegistry: Command[] = [helpCommand, aboutCommand, projectsCommand, projectCommand, skillsCommand, experienceCommand, certificationsCommand, cvCommand, contactCommand, clearCommand];
 
-export function runCommand(rawInput: string) {
+export function runCommand(rawInput: string, context?: CommandContext) {
   const [name, ...args] = rawInput.trim().toLowerCase().split(/\s+/);
   const normalizedName = name === "/clear" ? "/clean" : name;
-  return commandRegistry.find((command) => command.name === normalizedName)?.execute(args);
+  return commandRegistry.find((command) => command.name === normalizedName)?.execute(args, context);
 }
